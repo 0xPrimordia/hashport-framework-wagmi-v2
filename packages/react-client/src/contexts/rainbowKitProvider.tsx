@@ -23,7 +23,7 @@ export const RainbowKitBoilerPlate = ({
         .filter((chain): chain is wagmiChains.Chain => Boolean(chain));
 
     const { chains, publicClient } = configureChains(
-        [wagmiChains.mainnet, ...hashportChains],
+        [wagmiChains.mainnet, ...hashportChains, wagmiChains.base, wagmiChains.baseGoerli],
         [publicProvider()],
     );
     const { connectors } = getDefaultWallets({
